@@ -1,0 +1,7 @@
+# .gitignore
+venvDaniloPromo/
+__pycache__/
+*.pyc
+.env
+*.log
+/static/
