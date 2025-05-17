@@ -86,8 +86,61 @@
     <div class="container">
         <h1>🔥 Entre no Grupo Danilo Promoções</h1>
         <p>Receba no seu WhatsApp as melhores promoções da internet: eletrônicos, roupas, suplementos, utensílios e muito mais!</p>
-        <a class="btn" href="https://chat.whatsapp.com/Fln3pwkpnpr0etpba83jPP" target="_blank" onclick="registrarClique()">Quero Receber Ofertas Agora</a>
+        <a class="btn" href="https://chat.whatsapp.com/Fln3pwkpnpr0etpba83jPP" target="_blank" onclick="registrarClique()">Entrar no grupo do Whatsapp</a>
         <p class="urgency">⏳ Vagas limitadas – aproveite enquanto ainda há espaço!</p>
     </div>
+
+
+<script>
+  function registrarClique() {
+    fetch('/registrar-clique/', {
+      method: 'POST',
+      headers: {
+        'X-CSRFToken': getCookie('csrftoken')
+      }
+    });
+  }
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  window.onload = function () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                fetch('/salvar-localizacao/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+                });
+            },
+            function () {
+                // Permissão negada, salva 0 e 0
+                fetch('/salvar-localizacao/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `lat=0&lon=0`
+                });
+            }
+        );
+    }
+}
+</script>    
 </body>
 </html>

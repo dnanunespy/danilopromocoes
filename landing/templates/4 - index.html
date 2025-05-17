@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danilo Promoções - Ofertas Exclusivas</title>
+    <meta name="description" content="Grupo de promoções com os melhores preços em eletrônicos, roupas, suplementos e muito mais. Junte-se agora ao Danilo Promoções!">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ffd700, #ff4d4d);
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            padding: 60px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: #fff;
+            color: #ff4d4d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #ffe5e5;
+            transform: scale(1.05);
+        }
+        .urgency {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #fff8dc;
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '3449819271972495'); // Substitua pelo seu Pixel ID
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=3449819271972495&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+      function registrarClique() {
+        // Evento personalizado: Lead
+        fbq('track', 'Lead');
+
+        // Evento personalizado: Clique para WhatsApp
+        fbq('trackCustom', 'ClickWhatsApp');
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Entre no Grupo Danilo Promoções</h1>
+        <p>Receba no seu WhatsApp as melhores promoções da internet: eletrônicos, roupas, suplementos, utensílios e muito mais!</p>
+        <a class="btn" href="https://chat.whatsapp.com/Fln3pwkpnpr0etpba83jPP" target="_blank" onclick="registrarClique()">Quero Receber Ofertas Agora</a>
+        <p class="urgency">⏳ Vagas limitadas – aproveite enquanto ainda há espaço!</p>
+    </div>
+</body>
+</html>
